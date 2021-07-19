@@ -91,94 +91,68 @@ export const Users = () => {
     }, []);
 
   
-      return ( <
-        div className = "row" >
-        <
-        div className = "col-md-4" >
-        <
-        form onSubmit = { handleSubmit }
-        className = "card card-body" >
-        <
-        div className = "form-group" >
-        <
-        input type = "text"
-        onChange = {
-            (e) => setName(e.target.value) }
+      return ( 
+          <div className = "row" >
+            <div className = "col-md-4" >
+              <form onSubmit = { handleSubmit } className = "card card-body" >
+            <div className = "form-group" >
+        <input type = "text"
+        onChange = {(e) => setName(e.target.value) }
         value = { name }
         className = "form-control"
         placeholder = "Name"
         ref = { nameInput }
         autoFocus /
         >
-        <
-        /div> <
-        div className = "form-group" >
-        <
-        input type = "email"
-        onChange = {
-            (e) => setEmail(e.target.value) }
+        </div> 
+
+      <div className = "form-group" >
+        <input type = "email"
+        onChange = {(e) => setEmail(e.target.value) }
         value = { email }
         className = "form-control"
-        placeholder = "User's Email" /
-        >
-        <
-        /div> <
-        div className = "form-group" >
-        <
-        input type = "password"
-        onChange = {
-            (e) => setPassword(e.target.value) }
+        placeholder = "User's Email" />
+        </div> 
+      <div className = "form-group" >
+        <input type = "password"
+        onChange = {(e) => setPassword(e.target.value) }
         value = { password }
         className = "form-control"
-        placeholder = "User's Password" /
-        >
-        <
-        /div> <
-        button className = "btn btn-primary btn-block" > { editing ? "Update" : "Create" } <
-        /button> <
-        /form> <
-        /div> <
-        div className = "col-md-6" >
-        <
-        table className = "table table-striped" >
-        <
-        thead >
-        <
-        tr >
-        <
-        th > Name < /th> <
-        th > Email < /th> <
-        th > Password < /th> <
-        th > Operations < /th> <
-        /tr> <
-        /thead> <
-        tbody > {
+        placeholder = "User's Password" />
+        </div> <
+        button className = "btn btn-primary btn-block" > { editing ? "Update" : "Create" } </button> 
+        </form> 
+       </div> 
+       <div className = "col-md-6" >
+        <table className = "table table-striped" >
+        <thead >
+        <tr >
+        <th > Name < /th> 
+        <th > Email < /th> 
+        <th > Password < /th>
+        <th > Operations < /th>
+        </tr> 
+        </thead>
+        <tbody > {
             users.map((user) => ( <
                 tr key = { user._id } >
-                <
-                td > { user.name } < /td> <
-                td > { user.email } < /td> <
-                td > { user.password } < /td> <
-                td >
-                <
-                button className = "btn btn-secondary btn-sm btn-block"
-                onClick = {
-                    (e) => editUser(user._id) } >
-                Edit <
-                /button> <
+                <td > { user.name } < /td> 
+                <td > { user.email } < /td> 
+                <td > { user.password } < /td> 
+                <td >
+                < button className = "btn btn-secondary btn-sm btn-block"
+                onClick = {(e) => editUser(user._id) } >
+                Edit </button> <
                 button className = "btn btn-danger btn-sm btn-block"
-                onClick = {
-                    (e) => deleteUser(user._id) } >
-                Delete <
-                /button> <
-                /td> <
-                /tr>
+                onClick = {(e) => deleteUser(user._id) } >
+                Delete </button> 
+                </td> 
+                </tr>
             ))
-        } <
-        /tbody> <
-        /table> <
-        /div> <
-        /div>
+        } </tbody> 
+        </table> 
+        </div> 
+       < /div>
     );
   
 
